@@ -1,1 +1,8 @@
-# devnet_automation
+# YESLAB DevNet A103课程代码
+课程使用的代码与学生项目，不断更新中
+## Netmiko最全面API解析
+* 基本SSH方法
+* SCP文件管理类
+* 跨平台备份
+* 网络设备安全基线
+* 邮件与钉钉自动化告警与故障处理
