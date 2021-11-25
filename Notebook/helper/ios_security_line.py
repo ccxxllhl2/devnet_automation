@@ -20,7 +20,7 @@ def user_secret_check(config):
 def consle_password_check(config):
     state_1 = re.findall(r'line con 0(.|\n|\r)*password',config)
     state_2 = re.findall(r'line con 0(.|\n)*login authentication',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -134,7 +134,7 @@ def loggin_source_check(config):
 def vrrp_sec_check(config):
     state_1 = re.findall(r'vrrp',config)
     state_2 = re.findall(r'vrrp(.|\n)*authentication md5',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -142,7 +142,7 @@ def vrrp_sec_check(config):
 def hsrp_sec_check(config):
     state_1 = re.findall(r'standy',config)
     state_2 = re.findall(r'standby(.|\n)*authentication md5',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -151,7 +151,7 @@ def hsrp_sec_check(config):
 def isis_sec_check(config):
     state_1 = re.findall(r'router isis',config)
     state_2 = re.findall(r'authentication mod md5',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -159,7 +159,7 @@ def isis_sec_check(config):
 def eigrp_sec_check(config):
     state_1 = re.findall(r'router eigrp',config)
     state_2 = re.findall(r'ip authentication mode',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -167,7 +167,7 @@ def eigrp_sec_check(config):
 def ospf_sec_check(config):
     state_1 = re.findall(r'router ospf',config)
     state_2 = re.findall(r'ip ospf message-digest-key',config)
-    if (state_1 and state_2) == []:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -175,7 +175,7 @@ def ospf_sec_check(config):
 def rip_sec_check(config):
     state_1 = re.findall(r'router rip',config)
     state_2 = re.findall(r'ip rip authentication mod',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -183,7 +183,7 @@ def rip_sec_check(config):
 def bgp_sec_check(config):
     state_1 = re.findall(r'router bgp',config)
     state_2 = re.findall(r'router bgp(.|\n)*neighbor(.|\n)*password',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -191,7 +191,7 @@ def bgp_sec_check(config):
 def bgp_sec_check(config):
     state_1 = re.findall(r'router bgp',config)
     state_2 = re.findall(r'bgp dampenin',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
@@ -225,7 +225,7 @@ def ntp_auth_check(config):
 def tcp_keep_check(config):
     state_1 = re.findall(r'tcp-keepalives-out',config)
     state_2 = re.findall(r'tcp-keepalives-in',config)
-    if state_1 & state_2:
+    if (state_1 and state_2) != []:
         return True
     else:
         return False
