@@ -13,14 +13,14 @@
 * 网络设备安全基线+可视化
 ## 模型化实验
 * catalyst8000v(IOSXE)
- - Netconf 基础实验
- - Netconf 配置增删改查
- - Netconf 在BGP的场景实验（国外GIT）
- - Restconf 基础实验
+ * Netconf 基础实验
+ * Netconf 配置增删改查
+ * Netconf 在BGP的场景实验（国外GIT）
+ * Restconf 基础实验
 * Nexus9000v(NXOS)
- - Netconf 基础实验
- - Netconf 配置增删改查
- - NX-API 实验
+ * Netconf 基础实验
+ * Netconf 配置增删改查
+ * NX-API 实验
 * Cisco YangSuite 开源工具
- - 安装部署
- - 使用方法
+ * 安装部署
+ * 使用方法
