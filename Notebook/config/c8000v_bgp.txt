@@ -1,0 +1,36 @@
+ip vrf vpn1
+ rd 60001:1
+ exit
+ip vrf vpn2
+ rd 60002:1
+ exit
+
+router bgp 45000
+ bgp router-id 192.168.1.61
+ bgp log-neighbor-changes
+ neighbor 1.1.1.100 remote-as 40000
+ neighbor 2.2.2.100 remote-as 50000
+ !
+ address-family ipv4
+  network 3.3.3.0 mask 255.255.255.0
+  neighbor 1.1.1.100 activate
+  neighbor 2.2.2.100 activate
+ exit-address-family
+ !
+ address-family ipv4 multicast
+  network 4.4.4.0 mask 255.255.255.0
+  neighbor 2.2.2.100 activate
+  neighbor 2.2.2.100 advertisement-interval 25
+ exit-address-family
+ !
+ address-family ipv4 vrf vpn1
+  network 192.168.1.0
+  neighbor 5.5.5.100 remote-as 60000
+  neighbor 5.5.5.100 activate
+ exit-address-family
+ !
+ address-family ipv4 vrf vpn2
+  network 192.168.2.0
+  neighbor 5.5.5.101 remote-as 60001
+  neighbor 5.5.5.101 activate
+ exit-address-family
