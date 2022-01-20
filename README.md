@@ -16,7 +16,7 @@
   * Netconf 基础实验
    * Netconf 配置增删改查
    * Netconf 在BGP的场景实验（国外GIT）
-   * Restconf 基础实验
+   * Restconf 玩OSPF配置
 * Nexus9000v(NXOS)
    * Netconf 基础实验
    * Netconf 配置增删改查
@@ -24,3 +24,4 @@
 * Cisco YangSuite 开源工具
    * 安装部署
    * 使用方法
+   * 带所有支持Netconf和Restconf的设备直接起飞
