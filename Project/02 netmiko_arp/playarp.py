@@ -9,6 +9,7 @@ from netmiko import ConnectHandler
 class playARP():
     def __init__(self, connect_info_dict):
         self.net = ConnectHandler(**connect_info_dict)
+        self.device_info = connect_info_dict
         self.ip_pattern = r"^(([01]{0,1}\d{0,1}\d|2[0-4]\d|25[0-5])\.){3}([01]{0,1}\d{0,1}\d|2[0-4]\d|25[0-5])$"
         self.mac_pattern = r"^([A-F0-9]{4}\.[A-F0-9]{4}\.[A-F0-9]{4}|[a-f0-9]{4}\.[a-f0-9]{4}\.[a-f0-9]{4})$"
         self.type_pattern = r"^(arpa|sap|smds|snap|srp-a|srp-b)$"
@@ -16,7 +17,7 @@ class playARP():
         
     def _connect_device(self):
         if not self.net.is_alive():
-            self.net = ConnectHandler(**connect_info_dict)
+            self.net = ConnectHandler(**self.device_info)
             print(f"连接成功，当前提示符为{self.net.find_prompt()}")
         
     def get_arp(self):
